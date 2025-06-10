@@ -14,8 +14,9 @@
     position: relative;
     display: inline-block;
     font-size: 3rem;
-    color: #007bff;
-    animation: waviy 1.2s infinite;
+    font-weight: 700;
+    color: #021573;
+    animation: waviy 0.8s infinite;
     animation-delay: calc(0.1s * var(--i));
 }
 @keyframes waviy {
@@ -38,3 +39,8 @@
         <span style="--i:11">L</span>
     </div>
 </div>
+<script>
+window.addEventListener('load', function() {
+    document.getElementById('preloader').style.display = 'none';
+});
+</script>

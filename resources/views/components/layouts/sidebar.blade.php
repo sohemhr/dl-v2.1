@@ -32,7 +32,105 @@
                     <span class="title">Data Artikel</span>
                 </a>
             </li>
-
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">Campaign</span>
+                    <span class="title">Data Promo</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">Work</span>
+                    <span class="title">Data Career</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">Contacts</span>
+                    <span class="title">Contact</span>
+                </a>
+            </li>
+             <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">Search_Check</span>
+                    <span class="title">Checking</span>
+                </a>
+            </li>
+            <li class="menu-title small text-uppercase">
+                <span class="menu-title-text">TRANSAKSI</span>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">patient_list</span>
+                    <span class="title">Data Perusahaan</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">receipt</span>
+                    <span class="title">Data Transaksi</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">payments</span>
+                    <span class="title">Data Pembayaran</span>
+                </a>
+            </li>
+            <li class="menu-title small text-uppercase">
+                <span class="menu-title-text">MASTER WEB</span>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">Domain</span>
+                    <span class="title">Office</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">credit_card</span>
+                    <span class="title">Rekening</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">feature_search</span>
+                    <span class="title">Layanan</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">Search_Check</span>
+                    <span class="title">Include List</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">List</span>
+                    <span class="title">List Proses</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">Database</span>
+                    <span class="title">Backup Database</span>
+                </a>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">construction</span>
+                    <span class="title">Maintenance</span>
+                </a>
+            </li>
+              <li class="menu-title small text-uppercase">
+                <span class="menu-title-text">USER WEB</span>
+            </li>
+            <li class="menu-item open hover:bg-blue-500">
+                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                    <span class="material-symbols-outlined menu-icon">group</span>
+                    <span class="title">Users</span>
+                </a>
+            </li><br>
 
             <li class="menu-item">
                 <a href="/logout" class="menu-link logout">

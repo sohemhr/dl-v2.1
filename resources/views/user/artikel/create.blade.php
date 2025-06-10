@@ -54,9 +54,9 @@
                                 <div class="form-group row">
                                     <label for="artikel_deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                                     <div class="col-sm-10">
-                                        <textarea name="artikel_deskripsi" id="mytexteditor" rows="25"
+                                        <textarea class="form-control ps-5 text-dark" name="artikel_deskripsi" id="mytexteditor" rows="25"
                                             placeholder="Pilih Format => Font Helvetica"
-                                            required>{{ old('artikel_deskripsi') }}</textarea>
+                                            required>{{ old(key: 'artikel_deskripsi') }}</textarea>
                                         @error('artikel_deskripsi')<span id="artikel_deskripsi"
                                         class="error invalid-feedback">{{ $message }}</span>@enderror
                                     </div>
