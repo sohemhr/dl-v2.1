@@ -1,0 +1,35 @@
+.card.hover:hover {
+    transform: scale(1.1);
+    background-color: rgb(255, 244, 96);
+}
+
+.card.hovernavlink:hover {
+    /* transform: scale(1.1); */
+    border-width: 2px;
+    border-style: solid;
+    border-color: #0a4194;
+    border-radius: 9px;
+}
+
+.borderdoklegbold {
+    border-width: 5px;
+    border-style: solid;
+    border-color: #0a4194;
+    border-radius: 9px;
+}
+
+.borderdokleg {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0a4194;
+    border-radius: 9px;
+}
+
+/* maps round */
+.mapwrapper iframe {
+    display: block;
+    /*border-radius: 50%;*/
+    border-top-left-radius: 9px 9px;
+    overflow: hidden;
+}
+

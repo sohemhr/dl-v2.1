@@ -1,0 +1,1062 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: localhost    Database: dokterlegalvdua
+-- ------------------------------------------------------
+-- Server version	8.0.30
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `akses_levels`
+--
+
+DROP TABLE IF EXISTS `akses_levels`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `akses_levels` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `akses_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `akses_level` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `akses_levels`
+--
+
+LOCK TABLES `akses_levels` WRITE;
+/*!40000 ALTER TABLE `akses_levels` DISABLE KEYS */;
+INSERT INTO `akses_levels` VALUES (1,'202500','Administrator','2025-02-23 23:31:09','2025-02-23 23:31:09'),(2,'202501','Admin','2025-02-23 23:31:09','2025-02-23 23:31:09'),(3,'202502','Manajemen','2025-02-23 23:31:09','2025-02-23 23:31:09'),(4,'202503','Finance','2025-02-23 23:31:09','2025-02-23 23:31:09'),(5,'202504','Sales','2025-02-23 23:31:09','2025-02-23 23:31:09'),(6,'202505','Operasional','2025-02-23 23:31:09','2025-02-23 23:31:09'),(7,'202506','Publisher','2025-02-23 23:31:09','2025-02-23 23:31:09');
+/*!40000 ALTER TABLE `akses_levels` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `artikels`
+--
+
+DROP TABLE IF EXISTS `artikels`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `artikels` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `artikel_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artikel_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artikel_kategori_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artikel_judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artikel_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artikel_deskripsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artikel_foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `artikel_tag` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artikel_author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `artikel_tanggal` date NOT NULL,
+  `artikel_status` enum('Public','Private') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `artikels`
+--
+
+LOCK TABLES `artikels` WRITE;
+/*!40000 ALTER TABLE `artikels` DISABLE KEYS */;
+INSERT INTO `artikels` VALUES (9,'e703318d-f076-43db-a31c-5436f838f07b','2503001','25004','Kenapa Dokter Legal Bisa Membantu Bisnis Anda Tumbuh Lebih Cepat?','kenapa-dokter-legal-bisa-membantu-bisnis-anda-tumbuh-lebih-cepat','<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis.</p>','artikel_images/pKJJwa6HUTeLHfJNhWk69e8dTFruSvE7ajbK8dhL.png','test','USR00000000','2025-03-07','Public','2025-03-06 21:15:05','2025-03-19 17:16:17'),(10,'b23d9012-cbfa-4778-a9ec-31d5096a05e4','2503002','25003','Kenapa Dokter Legal Bi','kenapa-dokter-legal-bi','<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis.</p>','artikel_images/Hhy6Z60H4VwGF79qYYsiUh81GUlp78XW1RYL2IiC.png','asd','USR00000000','2025-03-07','Public','2025-03-06 23:22:15','2025-03-10 07:13:08'),(11,'9101c1b9-0094-41d2-b46a-0afacc4b8ef7','2503003','25004','Kenapa Dokter leg','kenapa-dokter-leg','<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis.</p>','artikel_images/9rUwPZDd2hM3q0lzsCuFOITsTtdZU3qBktSy7Uv5.png','test','USR00000000','2025-03-10','Public','2025-03-09 18:48:06','2025-03-10 07:14:51'),(12,'dda875e0-1b09-4dc3-8b98-5bd77c59d8a4','2503004','25004','Kenapa Dokter Legal Bisa Membantu Bisnis Anda Tumbuh','kenapa-dokter-legal-bisa-membantu-bisnis-anda-tumbuh','<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis.</p>','artikel_images/XGdr48d4u1kNha5PwbtqC33NY2L3YKOd5YFZgtnt.jpg','test','USR00000000','2025-03-10','Public','2025-03-09 18:48:45','2025-03-09 19:31:26'),(13,'5ebdde1f-88fd-44f0-a8b0-ffc247404106','2503005','25004','Kenapa Dokter Legal Bisa Membantu Bisnis','kenapa-dokter-legal-bisa-membantu-bisnis','<p>tsets</p>','artikel_images/oYztNqkJWzcCKlOQNM9MwqehlvlccWrIP4GZFi2W.jpg','test','USR00000000','2025-03-10','Private','2025-03-09 19:17:52','2025-03-09 19:33:34'),(14,'c3aad7c7-b4b6-4dfa-b93e-ceddb4e93277','2503006','25004','Kenapa Dokter Legal Bisa Membantu Bisnis','kenapa-dokter-legal-bisa-membantu-bisnis','<p>test</p>','artikel_images/NhODlS3fFiMRcaBkK4Bgyp2X5wAFk2yuZTRi0jaC.png','test','USR00000000','2025-03-10','Private','2025-03-09 19:35:46','2025-03-09 19:37:42'),(15,'c227424e-5d00-4381-8cbb-d48c7f3c17e4','2503007','25003','Kenapa Dokter Legal Bisa Membantu Bisnis Anda Tumbuh Lebih Cep','kenapa-dokter-legal-bisa-membantu-bisnis-anda-tumbuh-lebih-cep','Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis, Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa distinctio ullam et, dolores facilis veniam nulla doloremque accusantium facere atque a voluptatem rerum numquam quam. Voluptate quisquam explicabo placeat perspiciatis.','artikel_images/taT1mYiSptex7ZPjE7OsHaHUPDfenNgAki0y6RY3.png','test one','USR00000000','2025-03-10','Public','2025-03-10 06:55:35','2025-03-19 17:17:09'),(16,'df072a05-7e54-43dc-92a5-f50b43d8f721','2503008','25004','Kenapa Dokter Legal Bisa Membantu Bisnis Anda Tumbuh Lebih Cepat?','kenapa-dokter-legal-bisa-membantu-bisnis-anda-tumbuh-lebih-cepat-135909','<p>test</p>','artikel_images/GmRrQrSVa4yAQ4Z4xLjg6FOTtAcsVUjeYrd9MmGK.png','test','USR00000000','2025-03-10','Private','2025-03-10 06:56:13','2025-03-10 06:59:09'),(17,'6e77692a-5743-48b5-a4ec-668210b2837f','2503009','25004','qwerty','qwerty','<p>qwerty</p>','artikel_images/SdOmFDAJkihNgepe6qWecPIzwACxpeXH6VAwNL2v.png','qwerty','USR00000000','2025-03-10','Private','2025-03-10 07:17:03','2025-03-10 07:17:25');
+/*!40000 ALTER TABLE `artikels` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cache`
+--
+
+DROP TABLE IF EXISTS `cache`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cache` (
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cache`
+--
+
+LOCK TABLES `cache` WRITE;
+/*!40000 ALTER TABLE `cache` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cache` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cache_locks`
+--
+
+DROP TABLE IF EXISTS `cache_locks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cache_locks` (
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expiration` int NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cache_locks`
+--
+
+LOCK TABLES `cache_locks` WRITE;
+/*!40000 ALTER TABLE `cache_locks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cache_locks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `careers`
+--
+
+DROP TABLE IF EXISTS `careers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `careers` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `career_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `career_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `career_judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `career_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `career_deskripsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `career_foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `career_author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `career_tanggal_mulai` date NOT NULL,
+  `career_tanggal_selesai` date NOT NULL,
+  `career_status` enum('Public','Private') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `careers`
+--
+
+LOCK TABLES `careers` WRITE;
+/*!40000 ALTER TABLE `careers` DISABLE KEYS */;
+INSERT INTO `careers` VALUES (2,'b8ef475a-f460-4f1e-9428-33e09d872ab8','2503001','Lowongan Kerja Sales Marketing','lowongan-kerja-sales-marketing','<p><b>Jabatan Utama:</b></p><ul><li><span style=\"font-size: 0.875rem;\">Berkomunikasi secara aktif dengan pelanggan dan menjalankan fungsi administratif</span></li></ul><p><b><br></b></p><p><b>Tugas Utama:</b></p><ul><li>Melayani pelanggan dengan cepat dan ramah</li><li>Mengidentifikasi dan menilai kebutuhan pelanggan untuk mencapai kepuasan</li><li>Menangani keluhan pelanggan, memberikan solusi dan alternatif yang tepat dalam batas waktu; menindaklanjuti untuk memastikan penyelesaian</li><li>Menjaga sikap positif, empati, dan profesional terhadap pelanggan setiap saat. Mengikuti prosedur, pedoman, dan kebijakan komunikasi</li><li>Melakukan proses administrasi menyeluruh</li></ul><p><b><br></b></p><p><b>Kualifikasi Pekerjaan:</b></p><ul><li>Usia maksimal 30 tahun</li><li>Minimal SMA, D3/S1 lebih diutamakan</li><li>Minimal 2 tahun pengalaman kerja di bidang yang setara</li><li>Berorientasi pada Pelanggan</li><li>Keterampilan menangani pelanggan yang baik</li><li>Mampu mengerjakan banyak tugas, memprioritaskan, dan mengatur waktu secara efektif</li><li>Enerjik &amp; Komunikatif</li><li>Bersemangat</li></ul><p><br></p><p><b>Kebijakan:</b></p><ul><li>5 hari kerja seminggu</li><li><span style=\"font-size: 0.875rem;\">Penempatan sesuai kebutuhan (Kebutuhan saat ini: SURABAYA)</span></li></ul><p><br></p><p><b>Benefit:</b></p><ul><li>Insentif Bulanan</li><li>Pegawai tetap</li><li>THR sesuai kebijakan perusahaan</li><li>Kesehatan &amp; Benefit</li><li>BPJS Kesehatan &amp; Ketenagakerjaan</li><li>Asuransi Eksternal untuk Rawat Inap &amp; Rawat Jalan</li><li>Perjalanan karyawan (Domestik/Internasional)</li></ul>','career_images/HyaEi00dRSWW3RND3zv9iEf64kb50YEsi1cqZbTt.jpg','USR00000000','2025-03-07','2025-03-31','Public','2025-03-07 02:17:18','2025-03-24 09:18:59');
+/*!40000 ALTER TABLE `careers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `checkings`
+--
+
+DROP TABLE IF EXISTS `checkings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `checkings` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `chk_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chk_nama_perusahaan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chk_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chk_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chk_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `chk_status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `checkings`
+--
+
+LOCK TABLES `checkings` WRITE;
+/*!40000 ALTER TABLE `checkings` DISABLE KEYS */;
+INSERT INTO `checkings` VALUES (3,'c5551e17-78b8-4bb7-9fb6-8b038528fc69','PT. ASDF GHIJKLM NOPQR','agus','agus@gmail.com','08999888776','0','2025-03-10 08:56:06','2025-03-12 06:16:23'),(4,'2ab35290-ec3d-4b06-a11d-6b4a450eab36','PT. GHIJKLM NOPQR ASDF ASDDDDDDDDD','abang','test@gmail.com','08999888776','1','2025-03-11 02:16:39','2025-03-11 02:19:25'),(5,'fc927c59-6f0d-4348-a872-5e5de551d209','test','asdfgh','a@gmail.com','098989','1','2025-03-21 04:07:06','2025-03-21 04:07:06');
+/*!40000 ALTER TABLE `checkings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contact_nomors`
+--
+
+DROP TABLE IF EXISTS `contact_nomors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contact_nomors` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `cn_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cn_office_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cn_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cn_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cn_foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contact_nomors`
+--
+
+LOCK TABLES `contact_nomors` WRITE;
+/*!40000 ALTER TABLE `contact_nomors` DISABLE KEYS */;
+INSERT INTO `contact_nomors` VALUES (2,'309d91fa-e7fc-49c6-8fbe-9b89e40e7451','DL001','Cs Asifa','6285123123874','nomor_images/ClMina3UNyLDiAGLBjOuB4MrStCe4JNyRp7bf10b.webp','2025-03-13 07:20:46','2025-03-18 07:24:05'),(3,'70850890-3667-4586-8860-0f618e27b0a1','DL001','Cs Ale','6281322200874','nomor_images/P1aDjAqVNYR734q3KV9HtDuwF2R3QalT8aVMjfyZ.webp','2025-03-13 07:21:32','2025-03-18 07:24:19'),(4,'44aaf3ae-cf44-41c1-82c3-c6d3f6482515','DL001','Cs April','628158818874','nomor_images/onfMJAEwuBqKtNV9ry9Gj6MJHClG3SOpbazDYF0o.webp','2025-03-13 07:34:16','2025-03-18 07:24:34'),(5,'c15d2738-6146-4050-8d39-e26408ca69c4','DL001','Cs Tiyas','6281222345874','nomor_images/6t64XR9EnV22zXCtvAlIu8m5YqZePdjruevGPEAP.webp','2025-03-18 07:26:28','2025-03-18 07:26:28'),(6,'602e471b-eec1-4823-bb95-8041f6937374','DL002','Cs Sintya','6281322200875','nomor_images/Wrz6tk05QTpoQyqEYatVuLUCtiMHnG6ygR3bIwFO.webp','2025-03-18 07:28:16','2025-03-18 07:28:16'),(7,'5fe412a3-a1fb-463b-bea4-5dd893f221f8','DL002','Cs Riyanti','6287822999875','nomor_images/FG3sEz35PXGHbVna0IRq7Q9uQ25xtB74p3Bh1otW.webp','2025-03-18 07:29:33','2025-03-18 07:29:33'),(8,'17cbaba7-db57-46f4-88a2-14a17d2e65e2','DL002','Cs Adel','628158818875','nomor_images/pPgBSSAVFvzP4N3P9MOgX2jjieNbNek9Iqvde9dp.webp','2025-03-18 07:30:18','2025-03-18 07:30:18'),(9,'08c0eb9e-1bbf-4a6e-ad53-f6ffeb38516b','DL002','Cs Arfan','6285123123875','nomor_images/mHwIRNkFb3c42oRzXS5JInA3wmMCKVHeeOEOuzLe.webp','2025-03-18 07:31:07','2025-03-18 07:31:07'),(10,'d42ddfa3-9189-405e-815b-faabd08398ac','DL002','Cs Anjar','6281222345875','nomor_images/h5mQBxVqvfYwuqDlztaZjJc7BN4EnYCxyOPJfiET.webp','2025-03-18 07:31:57','2025-03-18 07:31:57'),(11,'ff6b153b-4e9c-4506-a396-15cb71c376d3','DL003','Cs Fitrah','6287822999874','nomor_images/BXjwwm8XootEa1UB62J8YffyZWqmVJqIO1yEwU7l.webp','2025-03-18 07:33:00','2025-03-18 07:33:00');
+/*!40000 ALTER TABLE `contact_nomors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contacts`
+--
+
+DROP TABLE IF EXISTS `contacts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contacts` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `contact_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_subjek` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_isi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_status` enum('0','1') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contacts`
+--
+
+LOCK TABLES `contacts` WRITE;
+/*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
+INSERT INTO `contacts` VALUES (1,'2a18b6e5-108d-4e2e-9e42-389beadd88d0','test','test@gmail.com','08999888000','LN25020001','<p>test</p>','0','2025-03-11 01:54:33','2025-03-12 06:15:04'),(2,'e38d965b-5fd2-40c3-8f83-5f44493da218','test test','test@gmail.com','08999888000','LN25020002','<p>test</p>','1','2025-03-11 02:13:21','2025-03-11 02:19:33'),(3,'7647dbe7-200d-4818-9e19-bbb020c00c38','test','a@gmail.com','0898989','LN25020002','test','1','2025-03-21 02:23:32','2025-03-21 02:23:32'),(4,'2c7b9c28-c6f3-41f4-8abe-f13c9b712f30','test','a@gmail.com','08989','LN25020002','asd','1','2025-03-21 02:24:24','2025-03-21 02:24:24'),(5,'be497ea8-26d9-4655-9aec-c39bcaf7a286','agus','agus@gmail.com','09777111000','LN25020002','digi new','1','2025-03-21 02:25:49','2025-03-21 02:25:49'),(6,'f986b044-298e-4b30-83c9-52d6a45ef0c3','agus agus','agus@gmail.com','088989899','LN25030013','agshgsgh','1','2025-03-21 02:32:50','2025-03-21 02:32:50'),(7,'5dea6ed3-3f08-4ac8-898d-a71c4f44a8fb','hp','a@gmail.com','0999099','LN25030010','asdf','1','2025-03-21 02:35:45','2025-03-21 02:35:45');
+/*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `include_lists`
+--
+
+DROP TABLE IF EXISTS `include_lists`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `include_lists` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `il_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `il_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `il_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `include_lists`
+--
+
+LOCK TABLES `include_lists` WRITE;
+/*!40000 ALTER TABLE `include_lists` DISABLE KEYS */;
+INSERT INTO `include_lists` VALUES (1,'e445536c-4ab5-4c1a-ad0e-19b06e92fad6','0001','Pengecekan Nama PT','2025-02-23 23:33:46','2025-02-23 23:33:46'),(2,'e510ecde-4b36-492f-b3ee-15460cb02938','0002','Pemesanan Nama PT','2025-02-23 23:33:58','2025-02-23 23:33:58'),(3,'17ce5b9d-e511-4164-9af0-404e2a449e2f','0003','Persiapan Minuta','2025-02-23 23:34:08','2025-02-23 23:34:08'),(4,'330ee9f1-7943-4125-be50-82fabe2d5988','0004','Akta Pendirian PT','2025-02-23 23:34:18','2025-02-23 23:34:18'),(5,'bf56a118-a3da-4d2b-91ea-ca362aed5232','0005','SK Menteri','2025-02-23 23:34:28','2025-02-23 23:34:28'),(6,'b680f856-b72e-49f3-b5f9-3be90cc55be7','0006','NPWP','2025-02-23 23:34:43','2025-02-23 23:34:43'),(7,'263ada56-ee61-4190-b25d-bc44ef63780a','0007','SKT Pajak','2025-02-23 23:34:57','2025-02-23 23:34:57'),(8,'5ec8fd6f-410a-454b-b5da-d56ab3aae6fe','0008','NIB','2025-02-23 23:35:07','2025-02-23 23:35:07');
+/*!40000 ALTER TABLE `include_lists` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jenis`
+--
+
+DROP TABLE IF EXISTS `jenis`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `jenis` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `jenis_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_layanan_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_harga` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_diskon` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_final` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_desk` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_status` enum('Public','Private') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `jenis_jenis_slug_unique` (`jenis_slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jenis`
+--
+
+LOCK TABLES `jenis` WRITE;
+/*!40000 ALTER TABLE `jenis` DISABLE KEYS */;
+INSERT INTO `jenis` VALUES (5,'a0cbf406-bf52-4ab1-a5e4-be6c27005627','PRD25020001','LN25020001','Pendirian PT Test','pendirian-pt-test','1000','0','1000','test','Public','2025-02-24 02:47:59','2025-02-27 18:59:55'),(6,'fa09e1f3-36d9-4866-9384-0e62aed72a4e','PRD25020002','LN25020001','Pendirian PT Test Dua','pendirian-pt-test-dua','2000','0','2000','test dua','Public','2025-02-24 02:54:07','2025-02-24 02:54:07'),(8,'8ddfc959-774c-4760-bc63-2e6f2107dcf4','PRD25030003','LN25020001','Pendirian PT versi tiga','pendirian-pt-versi-tiga','1000000','5000','995000','lkjj','Public','2025-03-02 20:29:08','2025-03-02 20:29:08');
+/*!40000 ALTER TABLE `jenis` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `job_batches`
+--
+
+DROP TABLE IF EXISTS `job_batches`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `job_batches` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_jobs` int NOT NULL,
+  `pending_jobs` int NOT NULL,
+  `failed_jobs` int NOT NULL,
+  `failed_job_ids` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` mediumtext COLLATE utf8mb4_unicode_ci,
+  `cancelled_at` int DEFAULT NULL,
+  `created_at` int NOT NULL,
+  `finished_at` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `job_batches`
+--
+
+LOCK TABLES `job_batches` WRITE;
+/*!40000 ALTER TABLE `job_batches` DISABLE KEYS */;
+/*!40000 ALTER TABLE `job_batches` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jobs`
+--
+
+DROP TABLE IF EXISTS `jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `attempts` tinyint unsigned NOT NULL,
+  `reserved_at` int unsigned DEFAULT NULL,
+  `available_at` int unsigned NOT NULL,
+  `created_at` int unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jobs_queue_index` (`queue`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jobs`
+--
+
+LOCK TABLES `jobs` WRITE;
+/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `kategoris`
+--
+
+DROP TABLE IF EXISTS `kategoris`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `kategoris` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `kategori_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori_warna` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `kategoris`
+--
+
+LOCK TABLES `kategoris` WRITE;
+/*!40000 ALTER TABLE `kategoris` DISABLE KEYS */;
+INSERT INTO `kategoris` VALUES (1,'bd370d7c-2fe0-4bc4-b295-69d7e4c95e88','25001','Teamwork','teamwork','info','2025-03-05 23:50:07','2025-03-05 23:50:07'),(3,'4603908d-c96e-43ee-a4dc-789fe4502f47','25002','Bussiness','bussiness','warning','2025-03-06 00:11:05','2025-03-06 00:11:05'),(4,'74046bb8-4b6f-4643-8e4d-4fea2e53e8bb','25003','Legalitas','legalitas','success','2025-03-06 00:12:12','2025-03-06 00:12:12'),(5,'5a830f03-fb9d-4864-84b6-39154cf35f2c','25004','Umum','umum','danger','2025-03-06 00:12:21','2025-03-06 00:12:21');
+/*!40000 ALTER TABLE `kategoris` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `keywords`
+--
+
+DROP TABLE IF EXISTS `keywords`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `keywords` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `keyword_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keyword_artikel_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keyword_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keyword_slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `keywords`
+--
+
+LOCK TABLES `keywords` WRITE;
+/*!40000 ALTER TABLE `keywords` DISABLE KEYS */;
+INSERT INTO `keywords` VALUES (12,'2503070002','2503001','test k','test-k','2025-03-06 21:15:05','2025-03-06 21:15:05'),(13,'2503070003','2503001','testb','testb','2025-03-06 21:15:05','2025-03-06 21:15:05'),(14,'2503070004','2503001','test j','test-j','2025-03-06 21:15:05','2025-03-06 21:15:05'),(15,'2503070006','2503002','asd','asd','2025-03-06 23:22:15','2025-03-06 23:22:15'),(16,'2503100002','2503003','test','test','2025-03-09 18:48:06','2025-03-09 18:48:06'),(17,'2503100004','2503004','test','test','2025-03-09 18:48:45','2025-03-09 18:48:45'),(18,'2503100006','2503005','test','test','2025-03-09 19:17:52','2025-03-09 19:17:52'),(19,'2503100008','2503006','test','test','2025-03-09 19:35:46','2025-03-09 19:35:46'),(20,'2503100010','2503007','test 1 one','test-1-one','2025-03-10 06:55:35','2025-03-10 06:55:35'),(21,'2503100012','2503008','test','test','2025-03-10 06:56:14','2025-03-10 06:56:14'),(22,'2503100014','2503009','qwerty','qwerty','2025-03-10 07:17:03','2025-03-10 07:17:03');
+/*!40000 ALTER TABLE `keywords` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `layanans`
+--
+
+DROP TABLE IF EXISTS `layanans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `layanans` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `layanan_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `layanan_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `layanan_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `layanan_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `layanan_harga` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `layanan_desk` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `layanan_status` enum('Public','Private') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `layanans_layanan_slug_unique` (`layanan_slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `layanans`
+--
+
+LOCK TABLES `layanans` WRITE;
+/*!40000 ALTER TABLE `layanans` DISABLE KEYS */;
+INSERT INTO `layanans` VALUES (1,'b8b267c4-667d-4d86-aa61-29cd6a8e89db','LN25020001','Pendirian Perusahaan','pendirian-perusahaan','4000000','Membantu Anda menjalankan bisnis dengan legalitas serta badan usaha yang bonafide.','Public','2025-02-23 23:55:28','2025-03-19 15:21:53'),(2,'a208f623-9d4f-4f61-a4b9-e528d432ed7a','LN25020002','Penutupan Perusahaan','penutupan-perusahaan','15000000','Penyelesaian administrasi untuk menghindari utang pajak dan menghentikan kewajiban.&nbsp;','Public','2025-02-23 23:55:51','2025-03-19 15:22:13'),(3,'ae60a975-1e6a-44dd-aaea-206210691bff','LN25030003','Virtual Office','virtual-office','2500000','Miliki kantor tanpa bentuk fisik yang bisa digunakan sebagai alamat legal perusahaan.','Public','2025-03-18 08:26:24','2025-03-19 15:22:35'),(4,'6179cc75-479a-4719-8884-b69dbfa4e88b','LN25030004','Perizinan Khusus','perizinan-khusus','1000000','Jasa perizinan khusus untuk menjalankan bisnis di bidang usaha atau sektor tertentu.<br>','Public','2025-03-18 08:26:59','2025-03-19 15:46:20'),(5,'fddca180-c982-4ea9-b8f2-2cfb8e0478b9','LN25030005','Digital Marketing','digital-marketing','3500000','Buat Digital Profile perusahaan lebih mudah.&nbsp;&nbsp; <br> &nbsp;','Public','2025-03-18 08:27:30','2025-03-19 15:54:35'),(6,'f57fc378-e95c-4fc5-8b9e-6cecf1be6e32','LN25030006','Perizinan Usaha','perizinan-usaha','3000000','Membantu Anda memulai usaha tanpa repot mengurus OSS, NIB, dan kebutuhan lain.','Public','2025-03-18 08:28:04','2025-03-19 15:24:43'),(7,'e1ddcec3-551b-435c-9ac5-c458da5eb6e5','LN25030007','Perpajakan','perpajakan','1500000','Menghitung dan mengelola berbagai keperluan pajak pribadi maupun perusahaan','Public','2025-03-18 08:28:28','2025-03-19 15:50:32'),(8,'d0223127-32fa-4434-b690-03b55a38df76','LN25030008','HAKI','haki','3500000','Pendaftaran Merek, Hak Cipta, Paten, dll untuk melindungi kekayaan intelektual.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;','Public','2025-03-18 08:28:51','2025-03-19 15:25:22'),(10,'9ae0d9ac-5492-4eac-bb13-9334c9256f52','LN25030009','PMA','pma','10000000','Membantu warga negara asing mengatasi kerumitan dalam mendirikan bisnis di Indonesia.','Public','2025-03-19 16:24:47','2025-03-19 16:24:47'),(11,'3ee4417c-27e6-45c0-9fa0-9b6c3e26839d','LN25030010','Layanan Hukum','layanan-hukum','2000000','Layanan berbagai kebutuhan dan konsultasi dengan pengacara berpengalaman.','Public','2025-03-19 16:25:27','2025-03-19 16:25:27'),(12,'6f461682-c0ae-4732-a0fc-e3376bacd9fa','LN25030011','Perizinan Properti','perizinan-properti','2500000','Solusi profesional untuk mengurus kebutuhan legalitas seputar tanah dan properti.','Public','2025-03-19 16:26:09','2025-03-19 16:26:09'),(13,'c2232a06-3456-4612-8e54-37aed2fb4032','LN25030012','Layanan Privilege','layanan-privilege','2500000','Benefit menarik untuk klien Kami, khususnya untuk layanan Pembuatan PT &amp; CV.','Public','2025-03-19 16:26:56','2025-03-19 16:26:56'),(14,'5dda3c58-7bc4-4362-858d-dbd3800a50f4','LN25030013','Pembuatan Dan Peninjauan Perjanjian','pembuatan-dan-peninjauan-perjanjian','2000000','Memastikan perjanjian tertulis dengan jelas dan mengikat.','Public','2025-03-19 16:27:52','2025-03-19 16:27:52'),(15,'17d483a0-22d2-4349-9371-7daa2380098a','LN25030014','Pembuatan & Perubahan Dokumen','pembuatan-perubahan-dokumen','4000000','Dokumen untuk memenuhi kebutuhan bisnis Anda.','Public','2025-03-19 16:28:53','2025-03-19 16:28:53'),(16,'fc434898-492a-4cea-90aa-00839619700c','LN25030015','Layanan Lainnya','layanan-lainnya','500000','Layanan lain untuk memenuhi kebutuhan bisnis Anda.<br>&nbsp;','Public','2025-03-19 16:29:36','2025-03-19 16:32:16');
+/*!40000 ALTER TABLE `layanans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `list_proses`
+--
+
+DROP TABLE IF EXISTS `list_proses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `list_proses` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `lp_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lp_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lp_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lp_no_urut` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `list_proses`
+--
+
+LOCK TABLES `list_proses` WRITE;
+/*!40000 ALTER TABLE `list_proses` DISABLE KEYS */;
+INSERT INTO `list_proses` VALUES (1,'34f3cf39-44c6-44b6-9974-567bd5cb54ad','0001','Pengecekan Administrasi','1','2025-02-25 19:50:34','2025-03-12 04:05:45'),(2,'5836c8a0-933d-48e3-9be3-adb7ecfe6201','0002','Draft Minuta Akta','2','2025-02-25 19:50:52','2025-02-25 19:50:52'),(3,'542e965c-6d9e-4859-b803-e3fce1b2df2c','0003','Revisi Draft Minuta Akta','3','2025-02-25 19:51:16','2025-02-25 19:51:16'),(4,'1b0d1d1a-8464-406c-bedc-b885fa1b286f','0004','Proses Akta & SK','4','2025-02-25 19:51:32','2025-02-25 19:51:32'),(5,'99684da5-d23d-40d6-b5f0-8e19731e3647','0005','Proses NPWP','5','2025-02-25 19:51:47','2025-02-25 19:51:47'),(6,'64076c82-0eaa-4c90-b478-b7dcec902067','0006','Proses NIB','6','2025-02-25 19:52:01','2025-02-25 19:52:01'),(7,'2ab3d34b-9883-435b-b444-ce9a573f68f1','0007','Proses Cetak NPWP & SKT','7','2025-02-25 19:52:22','2025-02-25 19:52:22'),(8,'62371f52-225a-4063-af77-569ea6402f71','0008','Proses Selesai','8','2025-02-25 19:52:39','2025-02-25 19:52:39'),(9,'7ffd3fef-7aa1-4013-bd47-54a4965ba70b','0009','Pengajuan SPPKP','9','2025-02-25 19:52:53','2025-02-25 19:52:53'),(10,'44cb4d90-5006-4c4b-a43c-35d7fa87ed60','0010','Pengajuan Aktivasi Akun','10','2025-02-25 20:06:55','2025-02-25 20:06:55'),(11,'4bb82311-bebd-47ff-951b-78d6daef2694','0011','Survey PKP','11','2025-02-25 19:56:09','2025-02-25 19:56:09'),(12,'ba09e4b0-7dad-441d-9477-9f639d02871d','0012','Sertifikat Elektronik','12','2025-02-25 19:56:23','2025-02-25 19:56:23'),(13,'75877def-ace8-4977-8571-07ca060d4925','0013','Proses Perubahan Alamat','13','2025-02-25 19:56:40','2025-02-25 19:56:40'),(14,'151ff92f-a2bf-49e8-804c-893a9b7432cc','0014','Verifikasi Berkas','14','2025-02-25 19:57:28','2025-02-25 19:57:28'),(15,'8ef8ec9c-3901-4f59-afb8-52065c043894','0015','Apply Permohonan','15','2025-02-25 19:57:43','2025-02-25 19:57:43'),(16,'d3fefda6-a93b-4fa2-8e8a-ea4156ff5e86','0016','Pasca Permohonan','16','2025-02-25 19:58:02','2025-02-25 19:58:02');
+/*!40000 ALTER TABLE `list_proses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `migrations` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2025_02_18_015054_create_akseslevels_table',1),(5,'2025_02_20_061417_create_includelists_table',1),(6,'2025_02_20_075500_create_layanans_table',1),(7,'2025_02_21_030723_create_rolelayincs_table',1),(8,'2025_02_24_061726_create_jenis_table',1),(9,'2025_02_24_082152_create_rolelayincjns_table',2),(10,'2025_02_26_013624_create_listproses_table',3),(11,'2025_02_26_060736_create_perusahaans_table',4),(12,'2025_02_27_042333_create_transaksis_table',5),(13,'2025_02_27_070435_create_trxtransitadds_table',6),(14,'2025_02_27_070452_create_trxtransitedits_table',6),(15,'2025_02_28_041040_create_transaksidetails_table',7),(16,'2025_02_28_042325_create_transaksidetailstatuses_table',7),(17,'2025_03_05_033505_create_pembayarans_table',8),(18,'2025_03_06_034540_create_kategoris_table',9),(19,'2025_03_06_035203_create_artikels_table',10),(20,'2025_03_06_044021_create_keywords_table',11),(21,'2025_03_07_062630_create_promos_table',12),(22,'2025_03_07_081054_create_careers_table',13),(23,'2025_03_10_144653_create_checkings_table',14),(24,'2025_03_10_162358_create_contacts_table',15),(25,'2025_03_13_093959_create_offices_table',16),(26,'2025_03_13_113533_create_contactnomors_table',17),(27,'2025_03_14_135111_create_visitorswebs_table',18);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `offices`
+--
+
+DROP TABLE IF EXISTS `offices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `offices` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `office_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_telepon` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_deskripsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `office_foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `office_lokasi` text COLLATE utf8mb4_unicode_ci,
+  `office_lokasi_url` text COLLATE utf8mb4_unicode_ci,
+  `office_status` enum('Public','Private') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `offices`
+--
+
+LOCK TABLES `offices` WRITE;
+/*!40000 ALTER TABLE `offices` DISABLE KEYS */;
+INSERT INTO `offices` VALUES (2,'70d70c08-356a-4ca4-94e3-1d275203c3df','DL001','Head Office','head-office','Citra Grand Cibubur CBD Ruko Marquette Blok AR1 No. 27, RT.002/RW.006, Jatirangga, Kec. Jatisampurna, Kota Bekasi, Jawa Barat 17434','info@dokterlegal.co.id','(021) 2227 6576','099998888','<p>test</p>','office_images/tBuRa0wgJcfGHLpwhtRPXXpEbM6rtAmqQUGsBUjs.webp','<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15860.8695378861!2d106.93931!3d-6.365907!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6993236c29565d%3A0xef5b51c3fd40f3b5!2sDokter%20Legal!5e0!3m2!1sid!2sid!4v1741851917539!5m2!1sid!2sid\" width=\"200\" height=\"200\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>','https://maps.app.goo.gl/o8hvksdFG1zWT3ETA','Public','2025-03-13 04:41:50','2025-03-24 08:51:14'),(3,'e9b981dd-741c-45d1-a3e1-2fb09d584935','DL002','Branch Office Cikarang','branch-office-cikarang','Ruko The Hive Uptown No. B03 Jl. Waterfront Boulevard Lippo Cikarang, Kel. Cibatu, Kec. Cikarang Selatan, Kabupaten Bekasi, Jawa Barat 17530','info@dokterlegal.co.id','099998888','099998888','<p>ojojo</p>','office_images/PZJXO40o0Utk4PlDKD6BdYP6XdN68yildxiRkSYO.webp','<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15861.556096777405!2d107.150023!3d-6.343638!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699b005dfcf435%3A0x160143490758b168!2sDokter%20Legal%20Lippo%20Cikarang!5e0!3m2!1sid!2sid!4v1741852347841!5m2!1sid!2sid\" width=\"200\" height=\"200\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>','https://maps.app.goo.gl/KTRz9UvB2kv5escLA','Public','2025-03-13 04:43:45','2025-03-24 08:52:43'),(4,'a1c7c96c-9e6c-40c3-bd6d-798c2d7ba2a2','DL003','Branch Office Surabaya','branch-office-surabaya','Spazio Tower Office Building Lantai 5 Unit 501A Jl. Mayjend. Jonosewojo Kav.3 Kel. Pradahkalikendal, Kec. Dukuhpakis, Kota Surabaya, Provinsi Jawa Timur 60225','info@dokterlegal.co.id','099998888','099998888','<p>tesllk</p>','office_images/gZk4OwCrlexwjzaQoi6SF53ocIcFSHLy8EJh5vQL.webp','<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15830.27922521541!2d112.677503!3d-7.289687!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fd122fd65cc9%3A0x9b7c2fb552518662!2sDokter%20Legal%20Surabaya!5e0!3m2!1sid!2sid!4v1741852510424!5m2!1sid!2sid\" width=\"200\" height=\"200\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>','https://maps.app.goo.gl/gh4aCzBjtQcvUdYc7','Public','2025-03-13 07:55:25','2025-03-24 08:53:00');
+/*!40000 ALTER TABLE `offices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_reset_tokens`
+--
+
+DROP TABLE IF EXISTS `password_reset_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `password_reset_tokens` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+LOCK TABLES `password_reset_tokens` WRITE;
+/*!40000 ALTER TABLE `password_reset_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_reset_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pembayarans`
+--
+
+DROP TABLE IF EXISTS `pembayarans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pembayarans` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `pembayaran_uuid` char(36) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pembayaran_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_perusahaan_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_trx_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_rincian` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_jumlah` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_metode` enum('Cash','Transfer') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_penyetor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_penyetor_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_penerima` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_keterangan` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pembayaran_tanggal` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `updated_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pembayarans`
+--
+
+LOCK TABLES `pembayarans` WRITE;
+/*!40000 ALTER TABLE `pembayarans` DISABLE KEYS */;
+INSERT INTO `pembayarans` VALUES (7,'b13f211b-f7f5-48f3-826c-b95b12db902e','BYR25030003','250311001','DL25030006','PRD25030003-Pendirian PT versi tiga, PRD25020002-Pendirian PT Test Dua, PRD25020001-Pendirian PT Test,','150000','Transfer','agus','0999899898','bambang','test spembayaran','2025-03-11','USR00000000','USR00000000','2025-03-11 08:16:35','2025-03-11 08:16:35'),(8,'9d4777b7-a20e-44a3-8d53-1b5b18c283ba','BYR25030004','250312001','DL25030008','PRD25020001-Pendirian PT Test, PRD25020002-Pendirian PT Test Dua, PRD25030003-Pendirian PT versi tiga,','500000','Transfer','agus','0999888999','Bambang - 0999888800','- test','2025-03-12','USR00000000','USR25030005','2025-03-12 02:41:11','2025-03-12 09:07:14'),(10,'b147bd96-941f-45f1-88a4-4016f5fa4073','BYR25030005','250312001','DL25030008','PRD25020001-Pendirian PT Test, PRD25020002-Pendirian PT Test Dua, PRD25030003-Pendirian PT versi tiga,','100000','Transfer','asd','0999888999','Bambang - 0999888800','-nananna nananan nannananan','2025-03-14','USR00000000','USR00000000','2025-03-14 01:18:07','2025-03-14 01:19:18');
+/*!40000 ALTER TABLE `pembayarans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `perusahaans`
+--
+
+DROP TABLE IF EXISTS `perusahaans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `perusahaans` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `perusahaan_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_telepon` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_atas_nama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `perusahaan_an_hp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `perusahaan_user_kode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `perusahaan_nama_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_email_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_hp_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `perusahaan_tgl` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perusahaans`
+--
+
+LOCK TABLES `perusahaans` WRITE;
+/*!40000 ALTER TABLE `perusahaans` DISABLE KEYS */;
+INSERT INTO `perusahaans` VALUES (34,'06a4f7b5-8712-4a3e-8dba-c9fae613d56c','250304001','test','sfgsfgs','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-04 11:12:42','2025-03-04 11:12:42'),(35,'5adafad9-5e7d-4b8c-8851-d98e103f7b53','250304002','tytdytyd dtydtytdtydty','sgdghdhd','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-04 11:13:20','2025-03-04 11:13:20'),(36,'ef48bc95-547d-4e5f-a166-83cc1178fd2b','250304003','teststyts','sgsfsgsg','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-04 11:15:33','2025-03-04 11:15:33'),(37,'529da476-5945-4bf2-b0ad-f863039f4333','250304004','tdvdytdtyd','dgdhgdhg','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-04 11:19:47','2025-03-04 11:19:47'),(38,'80d3e0e2-59b6-41b5-9ee8-7654564f5d3c','250304005','tesgvsgvg sfgsfgsf','sg','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-04 11:23:06','2025-03-04 11:23:06'),(39,'545a8bf9-a1e4-48e3-9743-62ca527254cb','250304006','hjh fhfjhfhj','ssg','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-04 11:27:23','2025-03-04 11:27:23'),(40,'9ea88874-35b7-4ccc-8cff-5448e0c095d2','250304007','teststyst sysgshgs sgsgsghgsh','dghgddg','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-04 11:29:10','2025-03-04 11:29:10'),(41,'14bc5cd0-80ac-4829-8baa-501e922fcd4f','250304008','test lagih masih sama gak kodenya','sgfsgfg','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-04 18:24:15','2025-03-04 18:24:15'),(42,'5270ed18-a44d-443d-af9d-3799c2b71c2a','250304009','PT. MEDITAMA','DISINI AJAA','Medi@official.com','021','021',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-05','2025-03-05 02:09:54','2025-03-05 02:09:54'),(43,'b7ff8134-56e8-450b-976c-874e5b1744ed','250304010','test new date','dsdsfsf','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-06','2025-03-06 01:24:07','2025-03-06 01:24:07'),(44,'06bcb7a9-1442-4207-b2f4-afdc24894e49','250304011','masih bisa gak','asd','a@gmail.com','0999989899','09999999999',NULL,NULL,'USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-06','2025-03-06 01:26:08','2025-03-06 01:26:08'),(45,'36ae0087-1d97-44f8-acc9-fbb9a271b529','250306001','test new kode nih','jl. jalan dong dari pada bete no.27 jakata timur - Indonesia, Kode Pos 52261','a@gmail.com','0999989899','09999999999','Imam Wahyudi','09998888999','USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-06','2025-03-06 01:54:22','2025-03-12 01:47:48'),(46,'6102eaf8-58b4-4f9e-b5ff-44fd2acf6e70','250311001','test by sales','test','test@gmail.com','0999989899','09999999999',NULL,NULL,'USR25030002','Admin Sales','sales@gmail.com','08917612222','2025-03-11','2025-03-11 05:00:54','2025-03-11 05:00:54'),(47,'92cef962-0c8b-43a6-bde1-7683c2135799','250311002','pt abc','jakarta','abc@gmail.com','0827873723','0827873723',NULL,NULL,'USR25030002','Admin Sales','sales@gmail.com','08917612222','2025-03-11','2025-03-11 09:40:33','2025-03-11 09:40:33'),(48,'b1983bd3-29d8-482d-b3b4-8dc25b312ce3','250312001','PT. Media Informer Zone District','Jl. Jalan Dong Dari Pada Bete Iya Kan Yak, No.27, Majalengka, Jawa Barat, Indonesia - Kode Pos. 52661.','mediainformer@gmail.com','0999989899','09999999999','Agung Laksono Gumilar','09998888999','USR00000000','Sahrul Khumedi','sahrul@gmail.com','081775412154','2025-03-12','2025-03-12 02:20:04','2025-03-12 02:20:04');
+/*!40000 ALTER TABLE `perusahaans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `promos`
+--
+
+DROP TABLE IF EXISTS `promos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `promos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `promo_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `promo_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `promo_judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `promo_slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `promo_deskripsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `promo_foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `promo_author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `promo_tanggal_mulai` date NOT NULL,
+  `promo_tanggal_selesai` date DEFAULT NULL,
+  `promo_status` enum('Public','Private') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `promos`
+--
+
+LOCK TABLES `promos` WRITE;
+/*!40000 ALTER TABLE `promos` DISABLE KEYS */;
+INSERT INTO `promos` VALUES (1,'a748e9e6-be7f-4f3f-8800-44f9d0c2352e','2503001','test one','test-one','<p>test</p>','promo_images/lXjcNvCc1jxgKXUMpDSYjwvJeNzCW9bfR8pgS83I.jpg','USR00000000','2025-03-07','2025-03-07','Public','2025-03-07 00:03:09','2025-03-18 08:58:49'),(2,'0e83e29b-311a-4787-8737-c630951784d6','2503002','Promo Ramadhan Pendirian PT','promo-ramadhan-pendirian-pt','Promo Ramadhan Pendirian PT','promo_images/S2E8nhB68nAMYdr96l1aAvVOWoL1VhWxMNSBs7MM.jpg','USR00000000','2025-03-03','2025-03-31','Public','2025-03-07 01:58:52','2025-03-18 08:58:59'),(3,'fa36c3be-587a-4000-8909-9fb38722ea66','2503003','Promo Ramadhan Pendirian PT','promo-ramadhan-pendirian-pt','<p>test</p>','promo_images/3Bm2It2mEgXSD6DramJA77f0QR0vHDIf5G9sJAt4.png','USR00000000','2025-03-10','2025-03-31','Private','2025-03-10 07:25:17','2025-03-10 07:30:20'),(4,'44ef1e98-cb86-409e-8d7d-559020182bfc','2503004','Promo Ramadhan Pendirian PT','promo-ramadhan-pendirian-pt-143112','<p>Promo Ramadhan Pendirian PT</p>','promo_images/TyhVaRyQ5xA9R5C75yTEYshjhQxxNClha8nUd5g6.jpg','USR00000000','2025-03-10','2025-03-31','Private','2025-03-10 07:31:12','2025-03-10 07:31:12'),(6,'164bce03-792a-4c62-9a16-d4d32ead0eef','2503005','test','test','<p>test</p>','promo_images/AG2utNmbGrsQLSfchxp6nmFBPZAnpJ7TcHuTh9nd.jpg','USR25030006','2025-03-13','2025-04-03','Private','2025-03-13 02:31:36','2025-03-13 02:31:36');
+/*!40000 ALTER TABLE `promos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `role_layincjns`
+--
+
+DROP TABLE IF EXISTS `role_layincjns`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `role_layincjns` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `rlij_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rlij_jenis_kode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rlij_rli_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rlij_inc_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rlij_status` enum('Yes','No') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rlij_no_urut` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role_layincjns`
+--
+
+LOCK TABLES `role_layincjns` WRITE;
+/*!40000 ALTER TABLE `role_layincjns` DISABLE KEYS */;
+INSERT INTO `role_layincjns` VALUES (4,'25020002','PRD25020001','250004','0001','Yes','1','2025-02-24 02:47:59','2025-03-05 02:22:48'),(5,'25020003','PRD25020001','250005','0002','Yes','2','2025-02-24 02:47:59','2025-03-05 02:22:55'),(6,'25020004','PRD25020001','250006','0003','No','3','2025-02-24 02:47:59','2025-02-24 02:47:59'),(7,'25020006','PRD25020002','250004','0001','No','1','2025-02-24 02:54:07','2025-02-24 02:54:07'),(8,'25020007','PRD25020002','250005','0002','No','2','2025-02-24 02:54:07','2025-02-24 02:54:07'),(9,'25020008','PRD25020002','250006','0003','No','3','2025-02-24 02:54:07','2025-02-24 02:54:07'),(14,'25030010','PRD25030003','250004','0001','Yes','1','2025-03-02 20:29:09','2025-03-03 19:24:35'),(15,'25030011','PRD25030003','250005','0002','Yes','2','2025-03-02 20:29:09','2025-03-03 19:24:40'),(16,'25030012','PRD25030003','250006','0003','Yes','3','2025-03-02 20:29:09','2025-03-03 19:24:48'),(17,'25030013','PRD25030003','250007','0006','No','4','2025-03-02 20:29:09','2025-03-02 20:29:09');
+/*!40000 ALTER TABLE `role_layincjns` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `role_layincs`
+--
+
+DROP TABLE IF EXISTS `role_layincs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `role_layincs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `rli_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rli_lay_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rli_inc_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role_layincs`
+--
+
+LOCK TABLES `role_layincs` WRITE;
+/*!40000 ALTER TABLE `role_layincs` DISABLE KEYS */;
+INSERT INTO `role_layincs` VALUES (1,'250001','LN25020002','0001','2025-02-23 23:57:07','2025-02-23 23:57:07'),(2,'250002','LN25020002','0002','2025-02-23 23:57:15','2025-02-23 23:57:15'),(3,'250003','LN25020002','0003','2025-02-23 23:57:21','2025-02-23 23:57:21'),(4,'250004','LN25020001','0001','2025-02-23 23:58:44','2025-02-23 23:58:44'),(5,'250005','LN25020001','0002','2025-02-23 23:58:50','2025-02-23 23:58:50'),(6,'250006','LN25020001','0003','2025-02-23 23:58:55','2025-02-24 00:06:45'),(7,'250007','LN25020001','0006','2025-02-24 23:04:16','2025-02-24 23:04:16');
+/*!40000 ALTER TABLE `role_layincs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sessions`
+--
+
+DROP TABLE IF EXISTS `sessions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `sessions` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint unsigned DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_activity` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sessions_user_id_index` (`user_id`),
+  KEY `sessions_last_activity_index` (`last_activity`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sessions`
+--
+
+LOCK TABLES `sessions` WRITE;
+/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` VALUES ('9LoaRcPzvqjbL3IrQllx4n9Aj7lZuM1YyHFkJqk4',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0','YTozOntzOjY6Il90b2tlbiI7czo0MDoiUVBsQzRDMWpMYVlOc0Y3NWM0RVEwMlM4ZHlHbzltMk1Hb0hXYXlZRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9kb2t0ZXJsZWdhbHZkdWEudGVzdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=',1742955219),('dneHaDjDieUwTQnr51LlWX97KUnjNbEpSws1jlEt',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0','YTozOntzOjY6Il90b2tlbiI7czo0MDoiaGNCS2hVOE95V2JXbURDZDF0WXFZMU05WFI3dFZna2ZNNXVmeUk3YSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly9kb2t0ZXJsZWdhbHZkdWEudGVzdC9jb250YWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==',1742957932),('VIV5UhO5eV8VSUtj2u38FytJjOfff5P5xIM70znY',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiUThjek1YZHczbFFtN1c3MllXbFdKU0tEUkVUbDNSNmsxbTdOMGVLZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly9kb2t0ZXJsZWdhbHZkdWEudGVzdC9jb250YWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==',1742957244);
+/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transaksi_detail_statuses`
+--
+
+DROP TABLE IF EXISTS `transaksi_detail_statuses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `transaksi_detail_statuses` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `trxdtlsts_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtlsts_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtlsts_dtl_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtlsts_nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtlsts_keterangan` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtlsts_status` enum('Start','OnProcess','Failed','Completed') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_by` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transaksi_detail_statuses`
+--
+
+LOCK TABLES `transaksi_detail_statuses` WRITE;
+/*!40000 ALTER TABLE `transaksi_detail_statuses` DISABLE KEYS */;
+INSERT INTO `transaksi_detail_statuses` VALUES (19,'aed0f4eb-3d41-4d76-8331-e6c52de74c4e','2503050001','2503002','Pengecekan Administrasi','test new kode test tes','Completed','USR00000000','2025-03-06 01:46:22','USR00000000','2025-03-11 16:35:43'),(20,'69e50c45-f050-4ab9-a198-b30fcdda614d','2503060001','2503002','Pengajuan Aktivasi Akun','test 2','Failed','USR00000000','2025-03-06 01:47:18','USR00000000','2025-03-11 16:30:31'),(21,'8bf92362-5475-4e4f-a4c8-65afed47ecde','2503070001','2503004','Pengecekan Administrasi','test','Start','USR00000000','2025-03-07 00:18:06','USR00000000','2025-03-07 00:18:06'),(22,'3144de47-8a9e-4256-a597-a640202027a3','2503110001','2503016','Proses NIB','pengecekan administrasi','Completed','USR00000000','2025-03-11 09:21:37','USR00000000','2025-03-11 09:22:40'),(23,'747bd100-f587-49d5-a659-33813acbc1aa','2503110002','2503017','Pengecekan Administrasi','test','Completed','USR00000000','2025-03-11 09:32:59','USR00000000','2025-03-12 02:14:50'),(24,'2e832caf-01f4-4090-aa4a-1dc48d42af52','2503110003','2503002','Survey PKP','test','OnProcess','USR00000000','2025-03-11 15:34:52','USR00000000','2025-03-11 16:30:42'),(25,'91c5ca2f-b4e4-4be0-8c59-458e51bfd380','2503110004','2503002','Sertifikat Elektronik','ser','Start','USR00000000','2025-03-11 16:29:16','USR00000000','2025-03-11 16:36:18'),(26,'b9fb77bb-2ad4-427e-978a-412f63ac8a68','2503120001','2503024','Pengecekan Administrasi','tse one tsest one','Completed','USR25030003','2025-03-12 07:22:16','USR25030003','2025-03-12 07:25:00'),(27,'1bdb33f7-77a2-4b4b-97d7-b140e0f091ae','2503120002','2503024','Pengajuan Aktivasi Akun','ooioioi','Start','USR25030003','2025-03-12 07:24:50','USR25030003','2025-03-12 07:24:50');
+/*!40000 ALTER TABLE `transaksi_detail_statuses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transaksi_details`
+--
+
+DROP TABLE IF EXISTS `transaksi_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `transaksi_details` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `trxdtl_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtl_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtl_trx_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtl_perusahaan_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtl_user_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtl_layanan_kode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trxdtl_jenis_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtl_status` enum('Start','OnProcess','Completed') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxdtl_notes` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transaksi_details`
+--
+
+LOCK TABLES `transaksi_details` WRITE;
+/*!40000 ALTER TABLE `transaksi_details` DISABLE KEYS */;
+INSERT INTO `transaksi_details` VALUES (31,'9c8bcb5c-0294-47b6-8f14-332b830ad60a','2503002','DL25030001','250304001','USR00000000','LN25020001','PRD25020001','OnProcess','jdkdjkdjkjdkjd','2025-03-04 11:31:49','2025-03-04 11:43:03'),(32,'cff22997-53bf-4e6e-965c-452bef7455c9','2503004','DL25030002','250304002','USR00000000','LN25020001','PRD25020001','OnProcess','ffgg','2025-03-04 11:36:23','2025-03-05 02:15:34'),(33,'cc350749-0714-4c24-b231-53e36d232910','2503005','DL25030002','250304002','USR00000000','LN25020001','PRD25020002','Start',NULL,'2025-03-04 11:36:23','2025-03-04 11:36:23'),(34,'54ba220e-5f53-41b9-ad04-f3a1e5ab1314','2503006','DL25030002','250304002','USR00000000','LN25020001','PRD25030003','Start',NULL,'2025-03-04 11:36:23','2025-03-04 11:36:23'),(35,'fd6aff72-c623-4d60-b887-a8fd5c846356','2503008','DL25030003','250304003','USR00000000','LN25020001','PRD25020002','Start',NULL,'2025-03-04 11:39:26','2025-03-04 11:39:26'),(36,'049bcbaa-4579-4281-b8d6-816993c6e501','2503009','DL25030003','250304003','USR00000000','LN25020001','PRD25030003','Start',NULL,'2025-03-04 11:39:26','2025-03-04 11:39:26'),(37,'67f5f89b-9130-4e31-a531-ea6f2a05975c','2503011','DL25030004','250304009','USR00000000','LN25020001','PRD25020001','Start',NULL,'2025-03-05 02:11:28','2025-03-05 02:11:28'),(39,'f3c65f28-3ebd-4717-820b-0919d490f0b1','2503013','DL25030005','250306001','USR00000000','LN25020001','PRD25030003','Start',NULL,'2025-03-06 02:10:24','2025-03-06 02:10:24'),(41,'db68fbf2-b850-4433-8302-071d01caf97f','2503016','DL25030006','250311001','USR25030002','LN25020001','PRD25030003','OnProcess','test','2025-03-11 06:56:28','2025-03-11 09:32:27'),(42,'b53629ec-7ffe-4069-a069-4157fe5c2ae2','2503017','DL25030006','250311001','USR25030002','LN25020001','PRD25020002','Completed','test','2025-03-11 07:34:21','2025-03-11 09:35:52'),(43,'d92093f9-5313-43b0-aa3a-11dbfbc6e352','2503018','DL25030006','250311001','USR25030002','LN25020001','PRD25020001','Start','test','2025-03-11 07:34:27','2025-03-11 09:08:33'),(44,'34cd0788-6726-4188-9523-662d208970c9','2503020','DL25030007','250311002','USR25030002','LN25020001','PRD25030003','Start',NULL,'2025-03-11 09:41:50','2025-03-11 09:41:50'),(45,'18457a5a-33ad-4327-8f49-0121dd833cbd','2503022','DL25030008','250312001','USR00000000','LN25020001','PRD25020001','Start',NULL,'2025-03-12 02:22:09','2025-03-12 02:22:09'),(46,'d31fd35a-9450-4c23-b924-5d6655df1edb','2503023','DL25030008','250312001','USR00000000','LN25020001','PRD25020002','Start',NULL,'2025-03-12 02:22:09','2025-03-12 02:22:09'),(47,'abcc447c-721f-4446-82ae-47fce5f2a0c3','2503024','DL25030008','250312001','USR00000000','LN25020001','PRD25030003','OnProcess','test','2025-03-12 02:22:09','2025-03-12 07:24:23'),(48,'4fd45ab4-2aeb-49c7-bc39-8724dc10969f','2503026','DL25030009','250304011','USR00000000','LN25020001','PRD25030003','Start',NULL,'2025-03-12 02:31:06','2025-03-12 02:31:06'),(49,'bb40baed-7e6c-466f-9438-1fa92762a8f2','2503028','DL25030010','250304010','USR00000000','LN25020001','PRD25020002','Start',NULL,'2025-03-12 02:32:24','2025-03-12 02:32:24');
+/*!40000 ALTER TABLE `transaksi_details` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transaksis`
+--
+
+DROP TABLE IF EXISTS `transaksis`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `transaksis` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `trx_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_perusahaan_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_user_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_jumlah` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_diskon` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_biaya_lain` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_total_bayar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_keterangan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_tgl` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_status` enum('Start','OnProcess','Completed') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trx_status_bayar` enum('Menunggu Pembayaran','DP','Dicicil','Lunas') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transaksis`
+--
+
+LOCK TABLES `transaksis` WRITE;
+/*!40000 ALTER TABLE `transaksis` DISABLE KEYS */;
+INSERT INTO `transaksis` VALUES (22,'99a42dfe-117c-47a6-89e6-527cc6c2c04b','DL25030001','250304001','USR00000000','1000','0','0','1000','0kdjkdj','2025-03-05','OnProcess','Menunggu Pembayaran','2025-03-04 11:31:49','2025-03-04 11:43:03'),(23,'6461cddd-3066-40ce-aecb-646997f82b90','DL25030002','250304002','USR00000000','998000','0','0','998000','asd','2025-03-05','OnProcess','DP','2025-03-04 11:36:23','2025-03-05 01:23:53'),(24,'50853322-29cc-4bd1-a89a-e29342e33146','DL25030003','250304003','USR00000000','997000','0','0','997000','as','2025-03-05','Start','Menunggu Pembayaran','2025-03-04 11:39:26','2025-03-04 11:39:26'),(25,'87e66711-0074-499b-b95b-03065a782cd8','DL25030004','250304009','USR00000000','1000','60','0','-6000','jajan cilok','2025-03-05','Start','Menunggu Pembayaran','2025-03-05 02:11:27','2025-03-05 02:11:27'),(27,'510bff62-7759-454d-9f18-f06cec57c3f2','DL25030005','250306001','USR00000000','995000','0','0','990000','odidifji','2025-03-06','Start','Menunggu Pembayaran','2025-03-06 02:10:24','2025-03-06 02:10:24'),(28,'87da0831-8425-40c1-9f92-de534137cac9','DL25030006','250311001','USR25030002','998000','0','3000','1001000','test by sales','2025-03-11','OnProcess','Dicicil','2025-03-11 06:56:28','2025-03-14 07:45:25'),(29,'8567696b-f343-488c-a537-730d62f454c3','DL25030007','250311002','USR25030002','995000','10','0','994990','cdc','2025-03-11','Start','Menunggu Pembayaran','2025-03-11 09:41:49','2025-03-14 07:37:17'),(30,'48c0ba69-431b-4f97-a6e5-83505bb4063e','DL25030008','250312001','USR00000000','998000','0','50000','1048000','test new kode','2025-03-12','OnProcess','DP','2025-03-12 02:22:09','2025-03-12 08:50:13'),(31,'f6516d5f-f774-418d-baaa-69e8f217ef6f','DL25030009','250304011','USR00000000','995000','0','0','995000','tesss','2025-03-12','Start','Menunggu Pembayaran','2025-03-12 02:31:05','2025-03-12 02:31:05'),(32,'ceb759c9-b330-4b39-9c2b-b28402f579e8','DL25030010','250304010','USR00000000','2000','0','0','2000','test','2025-03-12','OnProcess','Menunggu Pembayaran','2025-03-12 02:32:24','2025-03-14 07:44:59');
+/*!40000 ALTER TABLE `transaksis` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_transit_add`
+--
+
+DROP TABLE IF EXISTS `trx_transit_add`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_transit_add` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `trxadd_uuid` char(36) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trxadd_perusahaan_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxadd_jenis_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_transit_add`
+--
+
+LOCK TABLES `trx_transit_add` WRITE;
+/*!40000 ALTER TABLE `trx_transit_add` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_transit_add` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_transit_edit`
+--
+
+DROP TABLE IF EXISTS `trx_transit_edit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_transit_edit` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `trxedit_uuid` char(36) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trxedit_transaksi_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxedit_perusahaan_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trxedit_jenis_kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_transit_edit`
+--
+
+LOCK TABLES `trx_transit_edit` WRITE;
+/*!40000 ALTER TABLE `trx_transit_edit` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_transit_edit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_hp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tmp_lahir` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tgl_lahir` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tgl_tgl` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tgl_bln` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tgl_thn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tgl_masuk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tgl_keluar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `foto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('Active','Deactive') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `level` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'4d8ff945-a93e-40d7-8ad5-57158a734786','USR00000000','Sahrul Khumedi','sahrul@gmail.com','2025-02-23 23:31:04','$2y$12$S.nyoTa8EwoQF72DKvHvqecqID2BUVwX8R1l5BFiBe3oQ2nxPaYOe','081775412154','Bekasi','2025-05-05','05','05','2025','2025-05-05',NULL,'users_foto/CZkzp2YMa9r51lzDDtxculiZ6UScyCrktFvZTWPd.PNG','Active','202500','gb0wXbxnYe','2025-02-23 23:31:05','2025-02-24 23:49:14'),(2,'441bce03-1557-4146-b2be-b64664d04df5','USR25020001','Devi Purnawati','oni.thamrin@example.org','2025-02-23 23:31:09','$2y$12$1Jpap0z21f1wmmxL7JhnnecJ8ZFzqOYP6w0TRuoQZUVro86IFCZ8y','081775412154','Bekasi','2025-05-05','05','05','2025','2025-05-05','','','Deactive','202501','wUPFBgXuIO','2025-02-23 23:31:09','2025-02-23 23:31:09'),(3,'0e470f21-f9cf-4e14-9352-8f239876f8fc','USR25030002','Admin Sales','sales@gmail.com','2025-03-11 02:56:09','$2y$12$pp5qIJi95NK4NxHG1221iOKka9OoYDyfq9iSXqPomoPVMS5sIZECq','08917612222','Bekasi','2025-03-03','03','03','2025','2025-03-05',NULL,'users_foto/8QxNIdWUtIRARV0F2jhELtLWxwGmXEwgH3JZvbPz.webp','Active','202504','n0ihPlSrut','2025-03-11 02:56:09','2025-03-12 04:47:44'),(4,'f54bfec0-7379-4d8e-b1a2-0c56961cb1eb','USR25030003','Admin OPS','ops@gmail.com','2025-03-12 03:01:30','$2y$12$5Gt51gqE0E0MqkcuMott9eq98.7nmhn8myDkozl1HCyPNNZaoNtXa','081775412154','Bekasi','2025-03-12','12','03','2025','2025-03-12',NULL,'users_foto/Am0TGfWooMAHBfhdfnwnfWiUsPdrwXpTrfnIX5cr.png','Active','202505','aMFz09fvNg','2025-03-12 03:01:30','2025-03-12 04:59:32'),(5,'5e1c9b20-fe12-4834-af18-7228a16ba9c2','USR25030004','Admin Operator','admin@gmail.com','2025-03-12 03:12:24','$2y$12$V6mKvWetCW/pmmfcVr.eg.2Zbo0ALaooiBM.cC9XF.qf9gCKsmSBC','081775412154','Bekasi','2025-03-12','12','03','2025','2025-03-12','','users_foto/yFvbaBp6jqqa9aFz1qNq3cgT2PGIiFauK9USaMUi.webp','Active','202501','oAj8nhEZon','2025-03-12 03:12:26','2025-03-12 03:12:26'),(6,'84d2ba00-f341-4204-973f-df7818c0cf24','USR25030005','Admin Finance','finance@gmail.com','2025-03-12 07:55:06','$2y$12$jkNAht5hYOUeTYmmC7QFkuditVQnH7RS60RmzKPKwbEzZUKbiAmv.','0999988888','Bekasi','2025-03-12','12','03','2025','2025-03-12',NULL,'users_foto/gcSBRYQ7hTtz3AhnyMKmZjEjU9vNQXHB89FHSFvX.jpg','Active','202503','CDjGKh9t6W','2025-03-12 07:55:06','2025-03-12 08:36:03'),(7,'d447c087-d70c-45a2-ad24-b35713c9c0e7','USR25030006','Admin Publisher','publisher@gmail.com','2025-03-13 02:09:10','$2y$12$dZOdXrXDOgVH6dEv8OSx5eqfk5H0IkseKZehRdLCpvGUW2z95yNOS','081775412154','Bekasi','2025-03-09','09','03','2025','2025-03-10',NULL,'users_foto/zlSO5daNfAW4a7OM6NGFDQy7r7PD6KKpL6trl4Mq.webp','Active','202506','GLysSKXsDw','2025-03-13 02:09:11','2025-03-13 02:34:51'),(8,'6f45f26d-0b62-4487-b4be-69249f79c7c7','USR25030007','Admin Sales Dua','salesdua@gmail.com','2025-03-17 01:42:08','$2y$12$OhLQ0n6rV8G6j2/s.5bSWOnu.i7gYAnKgEwStrrsKG0TUOyKasbJ2','081775412154','Bekasi','2025-02-24','24','02','2025','2025-03-17','','users_foto/rOL11pqWwINu77ucH0G9ASV8mOxQCCxwy6FqUPy1.webp','Active','202504','sKyFmf2o90','2025-03-17 01:42:09','2025-03-17 01:42:09');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `visitors_webs`
+--
+
+DROP TABLE IF EXISTS `visitors_webs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `visitors_webs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `visitors_webs`
+--
+
+LOCK TABLES `visitors_webs` WRITE;
+/*!40000 ALTER TABLE `visitors_webs` DISABLE KEYS */;
+INSERT INTO `visitors_webs` VALUES (1,'127.0.0.1','2025-03-14 06:56:04','2025-03-14 06:56:04'),(2,'127.0.0.1','2025-03-17 02:56:50','2025-03-17 02:56:50'),(3,'127.0.0.1','2025-03-18 06:46:44','2025-03-18 06:46:44'),(4,'127.0.0.1','2025-03-18 17:00:41','2025-03-18 17:00:41'),(5,'127.0.0.1','2025-03-19 17:00:17','2025-03-19 17:00:17'),(6,'127.0.0.1','2025-03-20 17:00:00','2025-03-20 17:00:00'),(7,'127.0.0.1','2025-03-22 16:46:54','2025-03-22 16:46:54'),(8,'127.0.0.1','2025-03-22 17:23:43','2025-03-22 17:23:43'),(9,'127.0.0.1','2025-03-24 01:07:09','2025-03-24 01:07:09'),(10,'127.0.0.1','2025-03-25 01:41:22','2025-03-25 01:41:22'),(11,'127.0.0.1','2025-03-26 02:06:40','2025-03-26 02:06:40');
+/*!40000 ALTER TABLE `visitors_webs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'dokterlegalvdua'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-03-26 10:09:00
