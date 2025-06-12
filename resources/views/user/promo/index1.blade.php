@@ -1,7 +1,12 @@
-@extends('components.layouts.app')
+@props(['title', 'subtitle'])
+<!DOCTYPE html>
+<html lang="id">
+    <x-layouts.head title="{{ $title }}" subtitle="{{ $subtitle }}" />
+    <x-layouts.navbar title="{{ $title }}" subtitle="{{ $subtitle }}" />
+    <x-layouts.sidebar title="{{ $title }}" subtitle="{{ $subtitle }}" />
+    <x-layouts.header title="{{ $title }}" subtitle="{{ $subtitle }}" />
 
-@section('content')
-    <!-- Main content -->
+        <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -23,7 +28,7 @@
                         <div class="card">                
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <a href="/admstr/career/create">
+                                    <a href="/admstr/promo/create">
                                     <button type="button" class="btn btn-primary">
                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                         &nbsp;Tambah Data
@@ -37,9 +42,9 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>career</th>
-                                        <th>Tgl_mulai</th>
-                                        <th>Tgl_selesai</th>
+                                        <th>Judul</th>
+                                        <th>Tgl_Mulai</th>
+                                        <th>Tgl_Selesai</th>
                                         <th>Status</th>
                                         <th>Action</th>           
                                     </tr>
@@ -48,27 +53,27 @@
                                 @php
                                     $no = 1;
                                 @endphp
-                                @foreach ($getCareer as $item)
+                                @foreach ($getPromo as $item)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $item->career_judul }}</td>
-                                        <td>{{ \Carbon\Carbon::parse($item->career_tanggal_mulai)->format('d-m-Y') }}</td>
-                                        <td>{{ \Carbon\Carbon::parse($item->career_tanggal_selesai)->format('d-m-Y') }}</td>
+                                        <td>{{ $item->promo_judul }}</td>    
+                                        <td>{{ \Carbon\Carbon::parse($item->promo_tanggal_mulai)->format('d-m-Y') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($item->promo_tanggal_selesai)->format('d-m-Y') }}</td>
                                         <td>
-                                            @if ($item->career_status == 'Private')
-                                                <span class="badge badge-warning">{{ $item->career_status }}</span>
+                                            @if ($item->promo_status == 'Private')
+                                                <span class="badge badge-warning">{{ $item->promo_status }}</span>
                                             @else
-                                                <span class="badge badge-success">{{ $item->career_status }}</span>
+                                                <span class="badge badge-success">{{ $item->promo_status }}</span>
                                             @endif
-                                        </td>                                          
+                                        </td>
                                         <td>
-                                            <a href="/admstr/career/show/{{ $item->career_uuid }}">
+                                            <a href="/admstr/promo/show/{{ $item->promo_uuid }}">
                                                 <button type="button" class="btn btn-xs btn-success">
                                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                                     &nbsp;Edit
                                                 </button>
                                             </a>
-                                            <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-delete{{ $item->career_uuid }}">
+                                            <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal-delete{{ $item->promo_uuid }}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                             </button> 
                                         </td>                          
@@ -88,25 +93,25 @@
             <!-- /.container-fluid -->
 
 
-            @foreach ($getCareer as $key)
-            <div class="modal fade" id="modal-delete{{ $key->career_uuid }}">
+            @foreach ($getPromo as $key)
+            <div class="modal fade" id="modal-delete{{ $key->promo_uuid }}">
             <div class="modal-dialog">
                 <div class="modal-content bg-white">
                 <div class="modal-header bg-danger">
                     <h4 class="modal-title">
                     <i class="fa fa-trash" aria-hidden="true"></i>
-                    Hapus Data Career
+                    Hapus Data Promo
                     </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Yakin Anda akan menghapus data {{ $key->career_judul }}&hellip;?</p>
+                    <p>Yakin Anda akan menghapus data {{ $key->promo_judul }}&hellip;?</p>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <form action="/admstr/career/destroy/{{ $key->career_uuid }}" method="post">
+                    <form action="/admstr/promo/destroy/{{ $key->promo_uuid }}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>
@@ -124,4 +129,11 @@
 
         </section>
         <!-- /.content -->  
-@endsection
+
+    <x-layouts.footer />
+    <x-layouts.js />
+    {{-- js new star here --}}
+
+    {{-- js new end --}}
+</body>
+</html>

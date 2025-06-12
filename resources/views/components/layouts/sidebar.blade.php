@@ -33,25 +33,25 @@
                 </a>
             </li>
             <li class="menu-item open hover:bg-blue-500">
-                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                <a href="/admstr/promo" class="menu-link hover:bg-blue-500">
                     <span class="material-symbols-outlined menu-icon">Campaign</span>
                     <span class="title">Data Promo</span>
                 </a>
             </li>
             <li class="menu-item open hover:bg-blue-500">
-                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                <a href="/admstr/career" class="menu-link hover:bg-blue-500">
                     <span class="material-symbols-outlined menu-icon">Work</span>
                     <span class="title">Data Career</span>
                 </a>
             </li>
             <li class="menu-item open hover:bg-blue-500">
-                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                <a href="/admstr/contact" class="menu-link hover:bg-blue-500">
                     <span class="material-symbols-outlined menu-icon">Contacts</span>
                     <span class="title">Contact</span>
                 </a>
             </li>
              <li class="menu-item open hover:bg-blue-500">
-                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                <a href="/admstr/checking2" class="menu-link hover:bg-blue-500">
                     <span class="material-symbols-outlined menu-icon">Search_Check</span>
                     <span class="title">Checking</span>
                 </a>
@@ -60,16 +60,43 @@
                 <span class="menu-title-text">TRANSAKSI</span>
             </li>
             <li class="menu-item open hover:bg-blue-500">
-                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+                <a href="/admstr/perusahaan" class="menu-link hover:bg-blue-500">
                     <span class="material-symbols-outlined menu-icon">patient_list</span>
                     <span class="title">Data Perusahaan</span>
                 </a>
             </li>
-            <li class="menu-item open hover:bg-blue-500">
-                <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">
+            <li class="menu-item">
+                <a href="/admstr/artikel" class="menu-link menu-toggle active hover:bg-blue-500">
                     <span class="material-symbols-outlined menu-icon">receipt</span>
                     <span class="title">Data Transaksi</span>
                 </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="/admstr/transaksi" class="menu-link hover:bg-blue-500">
+                            <span class="title">Transaksi</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/admstr/transaksi" class="menu-link hover:bg-blue-500">
+                            <span class="title">Start</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/admstr/transaksi" class="menu-link hover:bg-blue-500">
+                            <span class="title">On Process</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/admstr/transaksi" class="menu-link hover:bg-blue-500">
+                            <span class="title">Pending</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/admstr/transaksi" class="menu-link hover:bg-blue-500">
+                            <span class="title">Completed</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="menu-item open hover:bg-blue-500">
                 <a href="/admstr/artikel" class="menu-link hover:bg-blue-500">

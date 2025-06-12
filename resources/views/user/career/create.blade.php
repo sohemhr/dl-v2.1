@@ -1,12 +1,7 @@
-@props(['title', 'subtitle'])
-<!DOCTYPE html>
-<html lang="id">
-    <x-layouts.head title="{{ $title }}" subtitle="{{ $subtitle }}" />
-    <x-layouts.navbar title="{{ $title }}" subtitle="{{ $subtitle }}" />
-    <x-layouts.sidebar title="{{ $title }}" subtitle="{{ $subtitle }}" />
-    <x-layouts.header title="{{ $title }}" subtitle="{{ $subtitle }}" />
+@extends('components.layouts.app')
 
-    <!-- Main content here -->
+@section("content")
+   <!-- Main content here -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -104,10 +99,8 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-    <!-- /.content -->  
+    <!-- /.content --> 
 
-    <x-layouts.footer />
-    <x-layouts.js />
     {{-- js new star here --}}
     <script type="text/javascript">
         $(document).ready(function() {
@@ -136,5 +129,4 @@
         });
     </script>
     {{-- js new end --}}
-</body>
-</html>
+@endsection
