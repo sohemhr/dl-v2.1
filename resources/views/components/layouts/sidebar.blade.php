@@ -77,29 +77,29 @@
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="/admstr/transaksi" class="menu-link">
+                        <a href="/admstr/main-process/start" class="menu-link {{ Request::is('admstr/main-process/start') ? 'active' : '' }}">
                             <span class="title">Start</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="/admstr/transaksi" class="menu-link">
+                        <a href="/admstr/main-process/onprocess" class="menu-link {{ Request::is('admstr/main-process/on-process') ? 'active' : '' }}">
                             <span class="title">On Process</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="/admstr/transaksi" class="menu-link">
+                        <a href="/admstr/main-process/pending" class="menu-link {{ Request::is('admstr/main-process/pending') ? 'active' : '' }}">
                             <span class="title">Pending</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="/admstr/transaksi" class="menu-link">
+                        <a href="/admstr/main-process/completed" class="menu-link {{ Request::is('admstr/main-process/completed') ? 'active' : '' }}">
                             <span class="title">Completed</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link">
+                <a href="/admstr/pembayaran" class="menu-link {{ Request::is('admstr/pembayaran') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">payments</span>
                     <span class="title">Data Pembayaran</span>
                 </a>
@@ -108,43 +108,43 @@
                 <span class="menu-title-text">MASTER WEB</span>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link>
-                    <span class="material-symbols-outlined menu-icon">Domain</span>
+                <a href="/admstr/office" class="menu-link {{ Request::is('admstr/office') ? 'active' : '' }}">
+                    <span class="material-symbols-outlined menu-icon"> Domain</span>
                     <span class="title">Office</span>
                 </a>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link">
+                <a href="/admstr/rekening" class="menu-link {{ Request::is('admstr/rekening') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">credit_card</span>
                     <span class="title">Rekening</span>
                 </a>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link">
+                <a href="/admstr/layanan" class="menu-link {{ Request::is('admstr/layanan') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">feature_search</span>
                     <span class="title">Layanan</span>
                 </a>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link">
+                <a href="/admstr/includelist" class="menu-link {{ Request::is('admstr/includelist') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">Search_Check</span>
                     <span class="title">Include List</span>
                 </a>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link">
+                <a href="/admstr/list-proses" class="menu-link {{ Request::is('admstr/list-proses') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">List</span>
                     <span class="title">List Proses</span>
                 </a>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link">
+                <a href="/admstr/backup" class="menu-link {{ Request::is('admstr/backup') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">Database</span>
                     <span class="title">Backup Database</span>
                 </a>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link">
+                <a href="/admstr/maintenance/show" class="menu-link {{ Request::is('admstr/maintenance/show') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">construction</span>
                     <span class="title">Maintenance</span>
                 </a>
@@ -153,7 +153,7 @@
                 <span class="menu-title-text">USER WEB</span>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/artikel" class="menu-link">
+                <a href="/admstr/user" class="menu-link {{ Request::is('admstr/user') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">group</span>
                     <span class="title">Users</span>
                 </a>
