@@ -1,7 +1,7 @@
 <div class="sidebar-area" id="sidebar-area">
     <div class="logo position-relative">
         <a href="index" class="d-block text-decoration-none position-relative">
-            <img src="/assets/images/logo-icon.png" alt="logo-icon">
+            <img src="/assets/images/dokterlegal-biru-icon.png" alt="logo-icon">
             <span class="logo-text fw-bold text-dark">Dokter Legal</span>
         </a>
         <button class="sidebar-burger-menu bg-transparent p-0 border-0 opacity-0 z-n1 position-absolute top-50 end-0 translate-middle-y" id="sidebar-burger-menu">
@@ -153,7 +153,7 @@
                 <span class="menu-title-text">USER WEB</span>
             </li>
             <li class="menu-item open">
-                <a href="/admstr/user" class="menu-link {{ Request::is('admstr/user') ? 'active' : '' }}">
+                <a href="/admstr/users" class="menu-link {{ Request::is('admstr/users') ? 'active' : '' }}">
                     <span class="material-symbols-outlined menu-icon">group</span>
                     <span class="title">Users</span>
                 </a>
